@@ -4,25 +4,25 @@ from adapt.intent import IntentBuilder
 from mycroft.skills.core import MycroftSkill
 
 # Creating a skill extending MycroftSkill
-class good-night-skill(MycroftSkill):
+class GoodNightSkill(MycroftSkill):
     
     def __init__(self):
-        super(good-night-skill, self).__init__("good-night-skill")
+        super(GoodNightSkill, self).__init__("GoodNightSkill")
 
     def initialize(self):
         # Creating an intent requiring vocab
-        good-night = IntentBuilder("good-nightIntent")
-                           .require("good-night").build()
+        good_night_intent = IntentBuilder("GoodNightIntent"). \
+            require("GoodNightKeyword").build()
         # Associating a callback with the Intent
-        self.register_intent(good-night, self.handle_good-night)
+        self.register_intent(good_night_intent, self.handle_good_night_intent)
         
-    def handle_good-night(self):
+    def handle_good_night_intent(self, message):
         # Sending a command to Mycroft, speak dialog
-        self.speak_dialog("good-night")
+        self.speak_dialog("goodnight")
         
     def stop(self):
         pass
 
 
 def create_skill():
-    return good-night-skill()
+    return GoodNightSkill()
