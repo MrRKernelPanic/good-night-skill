@@ -6,4 +6,4 @@ Mycroft replies when user says `good night`.
 * Make this skill a part of mycroft-skills repo
 * Dim display and make eyes closed (until new user query)
   -   Combine with Nap time skill? 
-  * Turn connected lights off
+* Turn connected lights off
